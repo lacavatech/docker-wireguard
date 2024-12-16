@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export `xargs --null --max-args=1 echo < /proc/1/environ`
+
 INTERFACE_CHECK=$INTERFACE
 
 echo "Interface: ${INTERFACE}"

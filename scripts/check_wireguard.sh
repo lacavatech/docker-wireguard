@@ -2,6 +2,9 @@
 
 INTERFACE_CHECK=$INTERFACE
 
+echo "Interface: ${INTERFACE}"
+echo "Interface Check: ${INTERFACE_CHECK}"
+
 while true; do
    if ! wg show $INTERFACE_CHECK | grep "listening"; then
         echo "WireGuard connection down. Restarting...${INTERFACE_CHECK}"

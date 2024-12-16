@@ -1,10 +1,12 @@
-   #!/bin/bash
+#!/bin/bash
 
-   while true; do
-       if ! wg show $INTERFACE | grep -q "interface"; then
-           echo "WireGuard connection down. Restarting..."
-           wg-quick down $INTERFACE
-           wg-quick up $INTERFACE
-       fi
-       sleep 60
-   done
+INTERFACE_CHECK=${INTERFACE}
+
+while true; do
+   if ! wg show $INTERFACE_CHECK | grep "listening"; then
+        echo "WireGuard connection down. Restarting..."
+        wg-quick down $INTERFACE_CHECK
+        wg-quick up $INTERFACE_CHECK
+     fi
+     sleep 60
+ done

@@ -2,7 +2,6 @@ name: Publish Docker image
 
 on: push
 
-
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -35,7 +34,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: antlac1/wireguard:latest
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Generate artifact attestation

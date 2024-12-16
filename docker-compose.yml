@@ -1,0 +1,22 @@
+services:
+   vpn:
+    image: antlac1/wireguard:latest
+    container_name: wireguard
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE #optional
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ="America/New_York"
+      - INTERFACE=Client1 #Change to the name of your .conf file
+    volumes:
+      - ./config:/config #Folder with .conf files
+      - /lib/modules:/lib/modules #optional
+    ports:
+      - 51820:51820/udp
+      - 3128:3128/tcp
+      - 3128:3128/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INTERFACE_CHECK=${INTERFACE}
+INTERFACE_CHECK=$INTERFACE
 
 while true; do
    if ! wg show $INTERFACE_CHECK | grep "listening"; then

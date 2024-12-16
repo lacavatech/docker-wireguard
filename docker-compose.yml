@@ -9,7 +9,7 @@ services:
       - PUID=0
       - PGID=0
       - TZ="America/New_York"
-      - INTERFACE=Client1 #Change to the name of your .conf file
+      - INTERFACE=Client1 #Change to the name of your .conf file, default is wg0
     volumes:
       - ./config:/config #Folder with .conf files
       - /lib/modules:/lib/modules #optional

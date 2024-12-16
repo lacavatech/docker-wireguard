@@ -1,10 +1,10 @@
    #!/bin/bash
 
    while true; do
-       if ! wg show $interface | grep -q "latest handshake"; then
+       if ! wg show $INTERFACE | grep -q "interface"; then
            echo "WireGuard connection down. Restarting..."
-           wg-quick down $interface
-           wg-quick up $interface
+           wg-quick down $INTERFACE
+           wg-quick up $INTERFACE
        fi
        sleep 60
    done

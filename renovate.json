@@ -3,5 +3,5 @@
   "extends": [
     "config:recommended"
   ],
-  "assigneesFromCodeOwners": true
+  "assignees": ["alacava"]
 }

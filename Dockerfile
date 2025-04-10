@@ -1,4 +1,4 @@
-FROM linuxserver/wireguard@sha256:d83e18ec0b430ef6f7151d32e49e9f07f49162cbca8db738eee28ad43999fdd6
+FROM linuxserver/wireguard@sha256:b5010a1c2eca2cde4f287d65d31e6562032399c59d06c3ac2487d06586b6c10f
 
 ENV INTERFACE=wg0
 
